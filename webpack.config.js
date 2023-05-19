@@ -18,6 +18,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[hash][ext][query]'
+        }
+      },
+      {
         test: /\.js$/,
         enforce: 'pre',
         use: ['source-map-loader'],
@@ -47,8 +54,8 @@ module.exports = {
 
 if (process.env.NODE_ENV !== 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
-      new HtmlWebpackPlugin({
-          template: './src/index.html'
-      })
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ])
 }
