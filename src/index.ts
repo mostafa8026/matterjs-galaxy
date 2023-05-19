@@ -2,7 +2,7 @@ import { Bodies, Composite, Constraint, Engine, Events, Mouse, MouseConstraint, 
 import galaxyImagePath from './assets/blackhole.jpg';
 
 const engine = Engine.create();
-engine.world.gravity.y = 0; // disable gravity
+engine.gravity.y = 0; // disable gravity
 
 const render = Render.create({
   element: document.body,
